@@ -30,6 +30,14 @@ The ten-page dashboard now includes official CPCB concentration tables retrieved
 
 ## Start on Windows
 
+For the interactive historical demo, install the requirements and run:
+
+```powershell
+python -m streamlit run streamlit_app.py
+```
+
+This entrypoint restores `demo-data.zip`, verifies output checksums and opens the existing ten-page dashboard without an API key or a pipeline rebuild. The prominent historical-demo banner identifies October 9, 2026 as the recorded evaluation date. Snapshot AQI and freshness use that date; they do not claim today's conditions. Predictions remain withheld. See [public demo deployment](docs/public_demo.md) for hosting configuration.
+
 Use Python 3.11 and run these commands from the project root:
 
 ```powershell

@@ -43,7 +43,9 @@ h3 {font-size:1.08rem!important;}
 @media(max-width:700px){.block-container{padding:3.75rem 1rem 1rem;} .hero{padding:20px;} h1{font-size:1.8rem!important;} [data-testid="stMetric"]{padding:12px;}}
 </style>''',unsafe_allow_html=True)
 
-PAGES=['Overview','Live AQI','Stations','Forecast','Trends','Risk & Warnings','Spatial Intelligence','Data Quality','Methodology','About']
+DEMO_TIME=os.getenv('CIVISCOPE_DEMO_TIME')
+AQI_PAGE='Snapshot AQI' if DEMO_TIME else 'Live AQI'
+PAGES=['Overview',AQI_PAGE,'Stations','Forecast','Trends','Risk & Warnings','Spatial Intelligence','Data Quality','Methodology','About']
 with st.sidebar:
     st.markdown('<div class="brand">CIVISCOPE</div>',unsafe_allow_html=True)
     st.caption('DELHI · ENVIRONMENTAL INTELLIGENCE')
@@ -75,7 +77,13 @@ def monitor_panel():
     except (OSError,ValueError,KeyError,TypeError):
         st.caption('Automatic collector status unavailable · Screen refresh: every 60 seconds. Saved observations do not establish a live connection.')
 
-monitor_panel()
+if DEMO_TIME:
+    st.info('Historical interactive demo · saved government observations from October 9, 2026. This is not a live pollution feed. AQI estimates and freshness below are evaluated at the recorded snapshot time.')
+    st.caption(f'Snapshot evaluation time: {pd.Timestamp(DEMO_TIME).strftime("%d %b %Y, %H:%M IST")} · Forecasts remain withheld when evidence is insufficient.')
+    with st.sidebar:
+        st.link_button('View source & methodology','https://github.com/Mayank98-sudo/CIVISCOPE',width='stretch')
+else:
+    monitor_panel()
 
 @st.cache_data(ttl=60,show_spinner=False)
 def cached_run(folder,signature):
@@ -94,7 +102,7 @@ except (OSError,ValueError,KeyError,TypeError) as error:
     st.stop()
 
 obs=frames['observations'].copy()
-now=now_local()
+now=pd.Timestamp(DEMO_TIME) if DEMO_TIME else now_local()
 obs['age_hours']=(now-obs.observation_time).dt.total_seconds()/3600
 obs['freshness']=np.where(obs.age_hours>STALE_HOURS,'Stale','Fresh')
 latest=latest_observations(obs)
@@ -176,7 +184,7 @@ if page=='Overview':
     cols=st.columns(4)
     cols[0].metric('Median station AQI estimate',number(valid.median() if len(valid) else None))
     cols[1].metric('Stations in view',len(station_rows))
-    cols[2].metric('Fresh pollutant observations',int(current.freshness.eq('Fresh').sum()))
+    cols[2].metric('Fresh at snapshot' if DEMO_TIME else 'Fresh pollutant observations',int(current.freshness.eq('Fresh').sum()))
     cols[3].metric('Available station forecasts',int(forecasts[forecasts.station.isin(station_rows.station)].forecast_value.notna().sum()))
     st.caption('Median is a CIVISCOPE station statistic, not an official city AQI. AQI and risk are withheld where source meaning or units are unverified.')
     left,right=st.columns([1.5,1])
@@ -197,7 +205,7 @@ if page=='Overview':
     st.subheader(f'Latest reported {pollutant} values')
     current_table(current.sort_values('avg_value',ascending=False).head(12))
 
-elif page=='Live AQI':
+elif page==AQI_PAGE:
     st.info('AQI estimates use eligible concentration inputs and their averaging coverage. Unverified or stale inputs remain unavailable. These are CIVISCOPE calculations, not official published station AQI.')
     aqi=frames['aqi'].copy()
     if station!='All stations': aqi=aqi[aqi.station.eq(station)]
