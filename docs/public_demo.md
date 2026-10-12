@@ -1,5 +1,9 @@
 # Public interactive demo
 
+**Public URL:** https://civiscope-mayank-raj.streamlit.app/
+
+Deployed and verified on October 12, 2026, from the public GitHub repository using Python 3.11 and `streamlit_app.py`. All ten hosted pages loaded with zero application exceptions; station detail selection and map zoom worked. A separate unsigned-in browser opened the dashboard successfully. At a 390-pixel mobile viewport, document width matched the viewport, the sidebar was collapsed and no application exception appeared. The GitHub offline workflow passed for commit `92268b85aefe1d5f8813f5e81dda153fae69defa`.
+
 The public entrypoint is `streamlit_app.py`. It uses the existing dashboard and a checksum-verified archive of the October 9 analytical run. No credentials, private PC documents, runtime collector status or personal files are included. The archive contains only the manifest and its named analytical outputs derived from the public government observations.
 
 The demonstration evaluates freshness and AQI eligibility at the recorded analytical time, October 9, 2026, 18:44 IST. A prominent banner discloses this on every page. Navigation uses **Snapshot AQI**, not Live AQI; the original application entrypoint retains real-time freshness rules. Historical replay does not change measurements, invent forecasts or establish today's pollution conditions. The saved forecast outputs contain no available predictions.
@@ -10,7 +14,7 @@ Install `requirements.txt` with Python 3.11, then run `python -m streamlit run s
 
 ## Streamlit Community Cloud
 
-Use the public repository `Mayank98-sudo/CIVISCOPE`, branch `main`, entrypoint `streamlit_app.py`, and Python 3.11. No secrets are required. The root requirements file declares dependencies. The official deployment flow requires signing in to Streamlit and accepting its terms; hosting is not complete until a public app URL has been verified.
+The deployed configuration uses repository `Mayank98-sudo/CIVISCOPE`, branch `main`, entrypoint `streamlit_app.py`, and Python 3.11. No secrets are required. The root requirements file declares dependencies. Streamlit sign-in, terms acceptance and the displayed GitHub deployment permissions were completed with user approval. Hosting and unsigned-in public access have been verified.
 
 ## Verification on October 11
 

@@ -4,7 +4,9 @@
 
 A ten-page Streamlit dashboard by Mayank Raj, built with Python, pandas, NumPy and Plotly. Explore station observations, pollutant trends, maps, calculated AQI estimates, and the evidence behind each result.
 
-[Portfolio](https://mayank-raj-the-series.adoredteal16.chatgpt.site) · [Methodology](docs/methodology.md) · [Architecture](docs/architecture.md) · [Recorded validation](docs/final_report.md)
+[Interactive demo](https://civiscope-mayank-raj.streamlit.app/) · [Portfolio](https://mayank-raj-the-series.adoredteal16.chatgpt.site) · [Methodology](docs/methodology.md) · [Architecture](docs/architecture.md) · [Recorded validation](docs/final_report.md)
+
+The hosted demo explores the October 9, 2026 snapshot. It is publicly accessible without sign-in and does not claim today's pollution conditions or validated forecasts.
 
 ![Delhi air-quality dashboard](docs/qa/overview_desktop.png)
 
