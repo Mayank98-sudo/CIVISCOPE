@@ -1,0 +1,26 @@
+name: Cloud source connectivity diagnostic
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/probe_live_source.py
+      - .github/workflows/live-source-probe.yml
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check official source from cloud
+        run: python scripts/probe_live_source.py
+        env:
+          OGD_API_KEY: ${{ secrets.OGD_API_KEY }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: live-source-connectivity
+          path: live-source-probe.json
