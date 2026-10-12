@@ -28,6 +28,7 @@ st.markdown('''<style>
 [data-testid="stSidebar"] h1,[data-testid="stSidebar"] h2,[data-testid="stSidebar"] h3,[data-testid="stSidebar"] p,[data-testid="stSidebar"] label,[data-testid="stSidebar"] span {color:#ecf3f7;}
 [data-testid="stSidebar"] [data-baseweb="select"] span {color:#172e46;}
 [data-testid="stSidebar"] button p,[data-testid="stSidebar"] button span {color:#172e46;}
+[data-testid="stSidebar"] [data-testid^="stBaseLinkButton"] p,[data-testid="stSidebar"] [data-testid^="stBaseLinkButton"] span {color:#172e46;}
 h1 {font-size:2.2rem!important;letter-spacing:-.065rem;font-weight:750!important;}
 h2 {font-size:1.35rem!important;margin-top:1rem!important;}
 h3 {font-size:1.08rem!important;}
