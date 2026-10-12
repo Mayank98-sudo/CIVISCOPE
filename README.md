@@ -6,7 +6,7 @@ A ten-page Streamlit dashboard by Mayank Raj, built with Python, pandas, NumPy a
 
 [Interactive demo](https://civiscope-mayank-raj.streamlit.app/) · [Portfolio](https://mayank-raj-the-series.adoredteal16.chatgpt.site) · [Methodology](docs/methodology.md) · [Architecture](docs/architecture.md) · [Recorded validation](docs/final_report.md)
 
-The hosted demo explores the October 9, 2026 snapshot. It is publicly accessible without sign-in and does not claim today's pollution conditions or validated forecasts.
+The app includes **Live Monitoring** for four selected Delhi AirGradient PM2.5 sensors via OpenAQ, alongside the clearly labelled October 9, 2026 government-data archive. The sensor feed is not official Delhi AQI or the government station network. The public app requires no visitor sign-in. See [live monitoring](docs/live_monitoring.md) for collection, freshness, attribution and limitations.
 
 ![Delhi air-quality dashboard](docs/qa/overview_desktop.png)
 

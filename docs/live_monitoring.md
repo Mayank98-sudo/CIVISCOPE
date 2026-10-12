@@ -1,0 +1,13 @@
+# Live PM2.5 monitoring
+
+The public application opens **Live Monitoring**, showing selected Delhi sensor readings from OpenAQ / AirGradient. The four checked locations are GK1 (Oberoi Terrace), Santushti Apartments in Vasant Kunj, Air Check and Anand Lok. These are low-cost sensors, not the CPCB government network. PM2.5 is reported in µg/m³. No city AQI, risk tier or forecast is calculated from this limited feed.
+
+OpenAQ authentication and recent readings were verified on October 12, 2026. The government endpoint separately refused connections from both the local PC and a GitHub cloud runner. OpenAQ's government-station records were older, so they were not substituted as live data.
+
+`src/live_feed.py` retrieves checked location identities, units, current CC BY 4.0 attribution, latest PM2.5 values and the preceding 48 hours of reported hourly averages. Nonfinite/negative values are missing. Hourly records carrying provider flags are missing. Future values, ambiguous sensors, unsupported units and unrelated historical query results abort collection. Latest point measurements and hourly averages are labelled separately. Physical accuracy and calibration of these low-cost sensors are not certified by CIVISCOPE.
+
+The GitHub Actions workflow collects hourly, with its existing OpenAQ key held in the encrypted repository secret `OPENAQ_API_KEY`. The key is never written to source, public data or logs. Complete observations persist under `live/latest.json`; a failed collection retains them and publishes a failure reason under `live/status.json`. Scheduled jobs may run late, and the dashboard discloses collection and measurement times. Source measurements older than three hours are labelled stale. The screen refreshes every minute; it makes no API call using a visitor's browser. The cloud collector works independently of the PC.
+
+Location-specific source links, instrument names and data-owner attribution are shown in the page. Data are reused under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Only openly licensed measurements from the selected locations are published. The original ten archive pages remain labelled as the October 9 historical demo.
+
+Local verification: 64 tests ran, 63 passed and one optional OGD API test was skipped. Live page rendering, sensor selection and separation from the historical overview passed Streamlit AppTest checks. Availability depends on continuing provider reporting and successful scheduled collection; timestamps take precedence over collection success labels.

@@ -47,6 +47,7 @@ h3 {font-size:1.08rem!important;}
 DEMO_TIME=os.getenv('CIVISCOPE_DEMO_TIME')
 AQI_PAGE='Snapshot AQI' if DEMO_TIME else 'Live AQI'
 PAGES=['Overview',AQI_PAGE,'Stations','Forecast','Trends','Risk & Warnings','Spatial Intelligence','Data Quality','Methodology','About']
+if os.getenv('CIVISCOPE_ENABLE_LIVE')=='1': PAGES.insert(0,'Live Monitoring')
 with st.sidebar:
     st.markdown('<div class="brand">CIVISCOPE</div>',unsafe_allow_html=True)
     st.caption('DELHI · ENVIRONMENTAL INTELLIGENCE')
@@ -55,6 +56,10 @@ with st.sidebar:
 
 st.markdown('<div class="eyebrow">Urban intelligence / Delhi, India</div>',unsafe_allow_html=True)
 st.title(page if page!='Overview' else 'Delhi air quality intelligence')
+if page=='Live Monitoring':
+    from src.dashboard.live_view import render
+    render()
+    st.stop()
 
 # A timed fragment reloads the saved manifest and recomputes freshness every minute.
 # Network collection stays in a separate process, never in widget interactions.

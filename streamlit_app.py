@@ -14,4 +14,5 @@ def demo_configuration():
 directory,reference_time=demo_configuration()
 os.environ['CIVISCOPE_DATA_DIR']=str(directory)
 os.environ['CIVISCOPE_DEMO_TIME']=reference_time
+os.environ['CIVISCOPE_ENABLE_LIVE']='1'
 runpy.run_path(str(Path(__file__).parent/'src'/'dashboard'/'app.py'),run_name='__main__')
