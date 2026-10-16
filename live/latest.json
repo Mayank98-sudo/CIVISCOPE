@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-10-15T23:18:44.416302+00:00",
+  "collected_at": "2026-10-16T01:40:17.463736+00:00",
   "locations": [
     {
       "id": 2860223,
@@ -138,8 +138,8 @@
       "station": "GK1 (Oberoi Terrace)",
       "pollutant": "PM2.5",
       "unit": "ug/m3",
-      "value": 88.7,
-      "observation_time": "2026-10-15T23:00:00+00:00"
+      "value": 78.5,
+      "observation_time": "2026-10-16T01:00:00+00:00"
     },
     {
       "location_id": 4663956,
@@ -147,8 +147,8 @@
       "station": "Santushti Apartments, Vasant Kunj",
       "pollutant": "PM2.5",
       "unit": "ug/m3",
-      "value": 52.6,
-      "observation_time": "2026-10-15T22:00:00+00:00"
+      "value": 47.8,
+      "observation_time": "2026-10-16T01:00:00+00:00"
     },
     {
       "location_id": 4712609,
@@ -156,8 +156,8 @@
       "station": "Air Check",
       "pollutant": "PM2.5",
       "unit": "ug/m3",
-      "value": 73.3,
-      "observation_time": "2026-10-15T23:00:00+00:00"
+      "value": 67.7,
+      "observation_time": "2026-10-16T01:00:00+00:00"
     },
     {
       "location_id": 6145551,
@@ -165,8 +165,8 @@
       "station": "Anand Lok",
       "pollutant": "PM2.5",
       "unit": "ug/m3",
-      "value": 55.7,
-      "observation_time": "2026-10-15T23:00:00+00:00"
+      "value": 58.1,
+      "observation_time": "2026-10-16T01:00:00+00:00"
     }
   ],
   "history": [
@@ -663,38 +663,26 @@
       "percent_complete": 100.0
     },
     {
-      "location_id": 4663956,
-      "sensor_id": 13273790,
-      "station": "Santushti Apartments, Vasant Kunj",
+      "location_id": 2860223,
+      "sensor_id": 9320367,
+      "station": "GK1 (Oberoi Terrace)",
       "pollutant": "PM2.5",
       "unit": "ug/m3",
-      "value": 78.4,
-      "interval_start": "2026-10-13T22:30:00+00:00",
-      "observation_time": "2026-10-13T23:30:00+00:00",
+      "value": 88.7,
+      "interval_start": "2026-10-15T22:30:00+00:00",
+      "observation_time": "2026-10-15T23:30:00+00:00",
       "flagged": false,
       "percent_complete": 100.0
     },
     {
-      "location_id": 4663956,
-      "sensor_id": 13273790,
-      "station": "Santushti Apartments, Vasant Kunj",
+      "location_id": 2860223,
+      "sensor_id": 9320367,
+      "station": "GK1 (Oberoi Terrace)",
       "pollutant": "PM2.5",
       "unit": "ug/m3",
-      "value": 76.7,
-      "interval_start": "2026-10-13T23:30:00+00:00",
-      "observation_time": "2026-10-14T00:30:00+00:00",
-      "flagged": false,
-      "percent_complete": 100.0
-    },
-    {
-      "location_id": 4663956,
-      "sensor_id": 13273790,
-      "station": "Santushti Apartments, Vasant Kunj",
-      "pollutant": "PM2.5",
-      "unit": "ug/m3",
-      "value": 88.4,
-      "interval_start": "2026-10-14T00:30:00+00:00",
-      "observation_time": "2026-10-14T01:30:00+00:00",
+      "value": 93.2,
+      "interval_start": "2026-10-15T23:30:00+00:00",
+      "observation_time": "2026-10-16T00:30:00+00:00",
       "flagged": false,
       "percent_complete": 100.0
     },
@@ -1239,38 +1227,26 @@
       "percent_complete": 100.0
     },
     {
-      "location_id": 4712609,
-      "sensor_id": 15289075,
-      "station": "Air Check",
+      "location_id": 4663956,
+      "sensor_id": 13273790,
+      "station": "Santushti Apartments, Vasant Kunj",
       "pollutant": "PM2.5",
       "unit": "ug/m3",
-      "value": 136.0,
-      "interval_start": "2026-10-13T22:30:00+00:00",
-      "observation_time": "2026-10-13T23:30:00+00:00",
+      "value": 49.4,
+      "interval_start": "2026-10-15T22:30:00+00:00",
+      "observation_time": "2026-10-15T23:30:00+00:00",
       "flagged": false,
       "percent_complete": 100.0
     },
     {
-      "location_id": 4712609,
-      "sensor_id": 15289075,
-      "station": "Air Check",
+      "location_id": 4663956,
+      "sensor_id": 13273790,
+      "station": "Santushti Apartments, Vasant Kunj",
       "pollutant": "PM2.5",
       "unit": "ug/m3",
-      "value": 138.0,
-      "interval_start": "2026-10-13T23:30:00+00:00",
-      "observation_time": "2026-10-14T00:30:00+00:00",
-      "flagged": false,
-      "percent_complete": 100.0
-    },
-    {
-      "location_id": 4712609,
-      "sensor_id": 15289075,
-      "station": "Air Check",
-      "pollutant": "PM2.5",
-      "unit": "ug/m3",
-      "value": 142.0,
-      "interval_start": "2026-10-14T00:30:00+00:00",
-      "observation_time": "2026-10-14T01:30:00+00:00",
+      "value": 49.5,
+      "interval_start": "2026-10-15T23:30:00+00:00",
+      "observation_time": "2026-10-16T00:30:00+00:00",
       "flagged": false,
       "percent_complete": 100.0
     },
@@ -1815,38 +1791,26 @@
       "percent_complete": 100.0
     },
     {
-      "location_id": 6145551,
-      "sensor_id": 14745878,
-      "station": "Anand Lok",
+      "location_id": 4712609,
+      "sensor_id": 15289075,
+      "station": "Air Check",
       "pollutant": "PM2.5",
       "unit": "ug/m3",
-      "value": 130.0,
-      "interval_start": "2026-10-13T22:30:00+00:00",
-      "observation_time": "2026-10-13T23:30:00+00:00",
+      "value": 73.3,
+      "interval_start": "2026-10-15T22:30:00+00:00",
+      "observation_time": "2026-10-15T23:30:00+00:00",
       "flagged": false,
       "percent_complete": 100.0
     },
     {
-      "location_id": 6145551,
-      "sensor_id": 14745878,
-      "station": "Anand Lok",
+      "location_id": 4712609,
+      "sensor_id": 15289075,
+      "station": "Air Check",
       "pollutant": "PM2.5",
       "unit": "ug/m3",
-      "value": 126.0,
-      "interval_start": "2026-10-13T23:30:00+00:00",
-      "observation_time": "2026-10-14T00:30:00+00:00",
-      "flagged": false,
-      "percent_complete": 100.0
-    },
-    {
-      "location_id": 6145551,
-      "sensor_id": 14745878,
-      "station": "Anand Lok",
-      "pollutant": "PM2.5",
-      "unit": "ug/m3",
-      "value": 123.0,
-      "interval_start": "2026-10-14T00:30:00+00:00",
-      "observation_time": "2026-10-14T01:30:00+00:00",
+      "value": 70.2,
+      "interval_start": "2026-10-15T23:30:00+00:00",
+      "observation_time": "2026-10-16T00:30:00+00:00",
       "flagged": false,
       "percent_complete": 100.0
     },
@@ -2387,6 +2351,30 @@
       "value": 56.1,
       "interval_start": "2026-10-15T21:30:00+00:00",
       "observation_time": "2026-10-15T22:30:00+00:00",
+      "flagged": false,
+      "percent_complete": 100.0
+    },
+    {
+      "location_id": 6145551,
+      "sensor_id": 14745878,
+      "station": "Anand Lok",
+      "pollutant": "PM2.5",
+      "unit": "ug/m3",
+      "value": 55.7,
+      "interval_start": "2026-10-15T22:30:00+00:00",
+      "observation_time": "2026-10-15T23:30:00+00:00",
+      "flagged": false,
+      "percent_complete": 100.0
+    },
+    {
+      "location_id": 6145551,
+      "sensor_id": 14745878,
+      "station": "Anand Lok",
+      "pollutant": "PM2.5",
+      "unit": "ug/m3",
+      "value": 60.2,
+      "interval_start": "2026-10-15T23:30:00+00:00",
+      "observation_time": "2026-10-16T00:30:00+00:00",
       "flagged": false,
       "percent_complete": 100.0
     }
